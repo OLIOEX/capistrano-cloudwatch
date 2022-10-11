@@ -1,5 +1,7 @@
+require 'aws-sdk-cloudwatch'
+
 class Cloudwatch
-  NAMESPACE_SEPARATOR = '/'.freeze
+  NAMESPACE = 'Deployments'.freeze
 
   def initialize(context)
     @context = context
@@ -7,21 +9,16 @@ class Cloudwatch
 
   def put
     client.put_metric_data(
-      namespace: namespace,
+      namespace: NAMESPACE,
       metric_data: metric_data,
     )
   end
 
   private
-
-  def namespace
-    [fetch(:application), fetch(:project)].compact.join(NAMESPACE_SEPARATOR)
-  end
-
   def metric_data
     [
       {
-        metric_name: 'deployment',
+        metric_name: fetch(:application),
         timestamp: Time.now.utc,
         value: 1.0,
         dimensions: dimensions,
