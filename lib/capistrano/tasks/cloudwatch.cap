@@ -1,0 +1,10 @@
+namespace :deploy do
+  desc 'Log deployment to CloudWatch'
+  task :log_to_cloudwatch do
+    run_locally do
+      Cloudwatch.new(self).put
+    end
+  end
+end
+
+after 'deploy:finishing', 'deploy:log_to_cloudwatch'
