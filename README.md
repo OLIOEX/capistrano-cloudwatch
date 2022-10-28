@@ -1,4 +1,4 @@
-# Capistrano Cloudwatch [![Build Status](https://travis-ci.org/olioex/capistrano-cloudwatch.svg)](https://travis-ci.org/olioex/capistrano-cloudwatch) [![Gem Version](https://badge.fury.io/rb/capistrano-cloudwatch.svg)](http://badge.fury.io/rb/capistrano-cloudwatch)
+# Capistrano Cloudwatch [![Build Status](https://app.travis-ci.com/olioex/capistrano-cloudwatch.svg)](https://app.travis-ci.com/olioex/capistrano-cloudwatch) [![Gem Version](https://badge.fury.io/rb/capistrano-cloudwatch.svg)](http://badge.fury.io/rb/capistrano-cloudwatch)
 
 Publish metric for successful deploy to AWS CloudWatch - for [Capistrano v3](https://github.com/capistrano/capistrano).
 
